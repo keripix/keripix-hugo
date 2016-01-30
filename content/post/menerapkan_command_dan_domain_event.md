@@ -1,6 +1,6 @@
 +++
 date = "2016-01-27T14:43:52+07:00"
-description = "Command dan Domain Events adalah dua konsep yang benar-benar telah membantu pengembangan Dicoding hingga saat ini."
+description = "Command dan Domain Events adalah dua konsep yang benar-benar telah membantu pengembangan Dicoding hingga saat ini. Bagaimana detailnya?"
 title = "Menerapkan Command dan Domain Event"
 
 +++
