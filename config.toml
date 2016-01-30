@@ -1,0 +1,42 @@
+baseurl = "https://keripix.github.io"
+languageCode = "en-us"
+title = "Urip iku urup"
+theme = "hugo-cactus-theme"
+disqusShortname = "keripixio"
+publishdir = "public"
+canonifyurls = true
+
+[params]
+	name = "A. Akbar Hidayat"
+	description = "Urip Iku Urup"
+	bio = "Co Founder @dicoding"
+	
+	enableRSS = true
+
+	# The variables below are optionally too and can be used to
+	# translate or customize each string of the theme.
+
+	# Navigation links
+	#home = ""
+	#about = ""
+	#subscribe = ""
+	# Pagination links
+	#olderPosts = ""
+	#newerPosts = ""
+	#readMore = ""
+	#copyright = ""
+	# Sharing options and author information in posts
+	#aboutAuthor = "I'm an enthusiastic gopher."
+	#tweet = ""
+	#share = ""
+	# 404 page
+	#title404 = ""
+	#subtitle404 = ""
+	
+	# Social icons style - circle, rounded, or empty
+    socialIconStyle = "circle"
+
+# Add additional social link entries underneath
+[social]
+    facebook = "https://www.facebook.com/keripix"
+    github   = "https://www.github.com/keripix"
