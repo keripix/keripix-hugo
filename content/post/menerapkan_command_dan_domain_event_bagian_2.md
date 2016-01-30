@@ -43,9 +43,12 @@ class PublishUnpublishedChallengeHandler
             
             DB::beginTransaction();
             
-            $publishedChallenge = $this->challengePublicationContext->publishUnpublishedChallenge($command->challenge_id);
+            $publishedChallenge = $this->challengePublicationContext
+                ->publishUnpublishedChallenge($command->challenge_id);
             
-            $this->memberMailer->send($publishedChallenge->getChallengeOwner(), 'Congrats, your Challenge Has Been Published');
+            $this->memberMailer
+                ->send($publishedChallenge
+                ->getChallengeOwner(), 'Congrats, your Challenge Has Been Published');
             
             $this->feedRepository->add($publishedChallenge);
             
@@ -101,7 +104,8 @@ class PublishUnpublishedChallengeHandler
             
             DB::beginTransaction();
             
-            $publishedChallenge = $this->challengePublicationContext->publishUnpublishedChallenge($command->challenge_id);
+            $publishedChallenge = $this->challengePublicationContext
+                ->publishUnpublishedChallenge($command->challenge_id);
             
             DB::commit();
             
@@ -141,7 +145,9 @@ class ChallengePublicationContext
         // Karena challenge ini sudah dipublikasikan, maka kita
         // bangkitkan domain event yang berhubungan dengan kejadian
         // ini
-        $challenge->raise(new UnpublishedChallengeWasPublished($challenge->getId()));
+        $challenge->raise(
+            new UnpublishedChallengeWasPublished($challenge->getId())
+        );
         return $challenge;
     
     }
@@ -170,7 +176,10 @@ class EventMailerServiceProvider extends ServiceProvider
     {
         // Ketika seluruh event dari Domain Challenge dibangkitkan, maka kita jalankan ChallengeEventMailer
         // untuk menangani event tersebut.
-        \Event::listen('Dicoding.Domain.Challenge.*', 'Dicoding\Infrastructure\Emailing\Challenge\ChallengeEventMailer');
+        \Event::listen(
+            'Dicoding.Domain.Challenge.*',
+            'Dicoding\Infrastructure\Emailing\Challenge\ChallengeEventMailer'
+        );
     }
 }
 // Contoh wujud dari ChallengeEventMailer
@@ -204,7 +213,10 @@ class NewsFeedServiceProvider extends ServiceProvider
     {
         // Ketika seluruh event dari Domain Challenge dibangkitkan, maka kita jalankan ChallengeFeedListener
         // untuk menangani event tersebut.
-        \Event::listen('Dicoding.Domain.Challenge.*', 'Dicoding\Infrastructure\Feeds\Challenges\ChallengeFeedListener');
+        \Event::listen(
+            'Dicoding.Domain.Challenge.*',
+            'Dicoding\Infrastructure\Feeds\Challenges\ChallengeFeedListener'
+        );
     }
 }
 // Contoh wujud dari ChallengeFeedListener
