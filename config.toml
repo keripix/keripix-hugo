@@ -1,4 +1,4 @@
-baseurl = "https://keripix.github.io"
+baseurl = "https://keripix.github.io/"
 languageCode = "en-us"
 title = "Urip iku urup"
 theme = "hugo-cactus-theme"
